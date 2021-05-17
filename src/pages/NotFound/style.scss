@@ -1,0 +1,15 @@
+.page.not-found {
+  position: relative;
+  background-size: contain;
+  background-color: #000;
+  background-position: center center;
+
+  .btn-back {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%);
+
+  }
+}
+

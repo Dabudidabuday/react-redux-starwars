@@ -1,0 +1,33 @@
+.list {
+  position: relative;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: $colorPrimary;
+  width: 400px;
+  min-height: 300px;
+  height: min-content;
+  border-radius: $borderRadius;
+  transition: all .2s ease-in;
+
+  .item {
+    padding: 5px 10px;
+
+    .title {
+      display: block;
+      padding: 14px 10px 10px;
+      width: 100%;
+      font-weight: 500;
+      font-size: 22px;
+      color: white;
+      text-align: center;
+      background-color: transparent;
+      border: 1px solid white;
+      cursor: pointer;
+
+      &:hover {
+        color: $colorAccent;
+        border-color: $colorAccent;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.loader {
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -50%);
+
+  img {
+    width: inherit;
+    height: inherit;
+    animation: spin 2s infinite ease-in-out;
+    transform-origin: bottom left;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-40deg);
+  }
+
+  50% {
+    transform: rotate(320deg) rotateX(360deg);
+  }
+
+  100% {
+    transform: rotate(-40deg);
+  }
+}
+
+
+//@keyframes spin {
+//  0% {
+//    transform: rotate(-40deg);
+//  }
+//
+//  100% {
+//    transform: rotate(320deg);
+//  }
+//}

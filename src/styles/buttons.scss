@@ -1,0 +1,22 @@
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  letter-spacing: 4px;
+}
+
+.btn-primary {
+  padding: 10px 15px 8px;
+  color: white;
+  //font-family: inherit;
+  font-size: 26px;
+  background-color: $colorPrimary;
+  border: 1px solid $colorAccent;
+  border-radius: $borderRadius;
+
+  &:hover {
+    color: $colorPrimary;
+    background-color: $colorAccent;
+    transition: ease-in .25s;
+  }
+}
