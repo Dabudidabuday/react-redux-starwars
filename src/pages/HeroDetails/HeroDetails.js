@@ -23,9 +23,10 @@ export const HeroDetails = ({hero={}, loading=false, addHero=f=>f}) => {
                     Add To Favorites
                 </button>
 
-                <Tabs {...hero}/>
+
             </div>
 
+            <Tabs hero={hero}/>
         </div>
     )
 }

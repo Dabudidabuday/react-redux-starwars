@@ -1,7 +1,5 @@
 import React from "react";
-import { useSelector } from 'react-redux';
 import { baseUrl, urls } from "../../constants";
-// import { getHero } from '../../api';
 
 export const peopleActionTypes = {
     GET_PEOPLE: "PEOPLE.GET_PEOPLE",
@@ -11,16 +9,22 @@ export const peopleActionTypes = {
     SET_CHOSEN_HERO: 'PEOPLE.SET_CHOSEN_HERO',
     GET_HERO_SLUG: 'PEOPLE.GET_HERO_SLUG',
     SET_SEARCH_VALUE: 'PEOPLE.SET_SEARCH_VALUE',
+    SET_CURRENT_PAGE: 'PEOPLE.SET_CURRENT_PAGE'
 }
 
 export const peopleActions = {
     getPeople: () => async (dispatch) => {
         dispatch(peopleActions.setLoader(true))
+
         try {
-            const response = await fetch(baseUrl + urls.people);
+            const response = await fetch(`${baseUrl}${urls.people}`);
             const people = await response.json();
 
-            dispatch(peopleActions.setPeople(people.results))
+            //set current page to pagination
+            dispatch(peopleActions.setCurrentPage(people));
+
+            //set peoples
+            dispatch(peopleActions.setPeople(people.results));
         } catch(e) {
             console.log(e.message);
         } finally {
@@ -30,19 +34,6 @@ export const peopleActions = {
     setPeople: (people) => ({type: peopleActionTypes.SET_PEOPLE, payload: people}),
     filterPeople: (name) => ({type: peopleActionTypes.FILTER_PEOPLE, payload: name}),
     setLoader: (loading) => ({type: peopleActionTypes.SET_LOADER, payload: loading}),
-    // getChosenHero: (heroName) => async (dispatch) => {
-    //     dispatch(peopleActions.setLoader(true));
-    //
-    //     try {
-    //         const response = await getHero(heroName)
-    //         dispatch(peopleActions.setChosenHero(response.results))
-    //     } catch (e) {
-    //         console.log(e.message)
-    //     } finally {
-    //         dispatch(peopleActions.setLoader(false))
-    //     }
-    // },
-    // setChosenHero: (hero) => ({type: peopleActionTypes.SET_CHOSEN_HERO, payload: hero}),
-
+    setCurrentPage: (payload) => ({type: peopleActionTypes.SET_CURRENT_PAGE, payload}),
     setSearchValue: (name) => ({type: peopleActionTypes.SET_SEARCH_VALUE, payload: name})
 }

@@ -1,14 +1,11 @@
 import './style.scss';
 import React from "react";
 
-export const Pagination = ({ pages, current }) => {
+export const Pagination = ({ goPrev, goNext }) => {
     return (
         <div className="pagination">
-            {pages.map((page, i) =>
-                <span key={i} className={current ? 'pagination__item current' : 'pagination__item'}>
-                    {page}
-                </span>
-            )}
+            <button className="btn btn-pagination" onClick={() => goPrev}><span className="arrow left"> </span>Previous</button>
+            <button className="btn btn-pagination" onClick={goNext}>Next<span className="arrow right"> </span></button>
         </div>
     )
 }

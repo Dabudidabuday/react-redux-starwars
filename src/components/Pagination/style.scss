@@ -1,27 +1,21 @@
 .pagination {
+  display: flex;
+  justify-content: space-between;
   margin-top: 20px;
   padding: 13px 10px 10px;
   background-color: $colorPrimary;
   border-radius: $borderRadius;
 
-  &__item {
-    padding: 5px;
-    font-size: 26px;
+  .btn-pagination {
+    padding-right: 15px;
+    padding-left: 15px;
     color: white;
-    cursor: pointer;
-
-    &:not(:last-of-type) {
-      margin-right: 20px;
-    }
+    font-size: 24px;
 
     &:hover {
       color: $colorAccent;
-      border-bottom: 1px solid $colorAccent;
-    }
-
-    &.current {
-      color: $colorAccent;
-      border-bottom: 1px solid $colorAccent;
+      border-color: $colorAccent;
     }
   }
 }
+

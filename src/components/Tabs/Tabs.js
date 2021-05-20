@@ -4,6 +4,7 @@ import TabItem from "./TabItem";
 
 export const Tabs = ({ hero }) => {
     const [ active, setActive ] = useState(null);
+
     const tabs = [
         'films',
         'species',
@@ -29,7 +30,7 @@ export const Tabs = ({ hero }) => {
             </div>
 
             <div className="tabs__body">
-                {tabs[active] && <TabItem tab={tabs[active]} />}
+                {tabs[active] && <TabItem hero={hero} tab={tabs[active]} />}
             </div>
         </div>
     )

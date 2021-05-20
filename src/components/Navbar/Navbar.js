@@ -1,15 +1,22 @@
 import'./style.scss';
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import {NavLink, useHistory} from 'react-router-dom';
 import { paths } from "../../constants";
 import logo from '../../assets/images/icons/logo.png'
 
 export const Navbar = () => {
+    const history = useHistory();
+
+    const goHome = () => {
+        history.push(paths.peoples);
+    }
+
+
     return (
         <div className="navbar">
             <div className="flex-container jc-between ai-center">
                 <div className="navbar__brand">
-                    <div className="brand__logo">
+                    <div className="brand__logo" onClick={goHome}>
                         <img src={logo} alt="Star Wars logo"/>
                     </div>
 

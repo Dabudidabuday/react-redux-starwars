@@ -1,9 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-
 import { paths } from "../constants";
 import { Navbar } from "../components";
-import { Peoples, NotFound  } from "../pages";
+import { Peoples, NotFound } from "../pages";
 import { FavoritesContainer, HeroDetailsContainer } from "../containers";
 
 export const Routing = () => {
