@@ -1,9 +1,9 @@
 import 'regenerator-runtime/runtime';
 import { baseUrl, urls } from '../constants';
 
-export const getPeople = async () => {
-    const response = await fetch(`${baseUrl}${urls.people}`)
-        .then(response => response.json)
+export const getPeople = async (params="") => {
+    const response = await fetch(`${baseUrl}${urls.people}${params}`)
+        .then(response => response.json())
     return response;
 }
 

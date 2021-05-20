@@ -4,7 +4,7 @@ import background from '../../assets/images/backgrounds/hero-background.jpg';
 import { HeroDescription } from "./components";
 import { Loader } from "../../components/Loader";
 import PropTypes from 'prop-types';
-import {Tabs} from "../../components";
+import { Tabs } from "../../components";
 
 export const HeroDetails = ({hero={}, loading=false, addHero=f=>f}) => {
 
@@ -36,4 +36,5 @@ HeroDetails.propTypes = {
     loading: PropTypes.bool,
     addHero: PropTypes.func
 }
+
 

@@ -28,7 +28,7 @@ export const HeroDetailsContainer = () => {
             let favorites = JSON.parse(localStorage.getItem('favorites'));
             favorites.heroes.push(hero);
 
-            localStorage.setItem('favorites', JSON.stringify(favorites))
+            localStorage.setItem('favorites', JSON.stringify(favorites));
         }
     }
 

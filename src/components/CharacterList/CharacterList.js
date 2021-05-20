@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { peopleActions } from "../../store/people";
 import { Loader } from "../Loader";
 
-export const CharacterList = () => {
+export const CharacterList = ({ }) => {
     const { people, loading, searchValue } = useSelector(state => state.people);
     const dispatch = useDispatch();
 

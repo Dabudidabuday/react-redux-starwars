@@ -1,7 +1,7 @@
 import './style.scss';
 import React from "react";
 
-export const Pagination = ({ goPrev, goNext }) => {
+export const Pagination = ({ goPrev=f=>f, goNext=f=>f }) => {
     return (
         <div className="pagination">
             <button className="btn btn-pagination" onClick={() => goPrev}><span className="arrow left"> </span>Previous</button>
