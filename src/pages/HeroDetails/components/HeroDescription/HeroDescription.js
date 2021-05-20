@@ -5,7 +5,7 @@ export const HeroDescription = ({hero={}}) =>  {
 
     return (
        <div className="hero__description">
-           <h1 className="h1">{hero.name}</h1>
+           <h1 className="h1 hero__title">{hero.name}</h1>
 
            <div className="short-description">
                <p>Height: {hero.height}</p>

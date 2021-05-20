@@ -10,16 +10,33 @@ export const HeroDetailsContainer = () => {
     const dispatch = useDispatch();
     const { hero, loading } = useSelector(state => state.details);
     const heroName = slugToName(slug);
-    console.log(heroName)
+
     useEffect(() => {
 
         dispatch(detailsActions.getHero(heroName));
-    }, [] )
+    }, [] );
+    
+    const addToFavorites = () => {
+        if(localStorage.getItem('favorites') === null) {
+            let favorites = {
+                heroes: []
+            };
+            favorites.heroes.push(hero)
+
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        } else {
+            let favorites = JSON.parse(localStorage.getItem('favorites'));
+            favorites.heroes.push(hero);
+
+            localStorage.setItem('favorites', JSON.stringify(favorites))
+        }
+    }
 
     return (
         <HeroDetails
             hero={hero}
             loading={loading}
+            addHero={addToFavorites}
         />
     )
 }

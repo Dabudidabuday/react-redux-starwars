@@ -39,12 +39,6 @@ export const peopleReducers = (state=initialState, action) => {
                 ))
             }
 
-        case peopleActionTypes.SET_CHOSEN_HERO:
-            return {
-                ...state,
-                chosenHero: action.payload.reduce((acc, cur, i) => acc[i] = cur, {})
-            }
-
         case peopleActionTypes.SET_SEARCH_VALUE:
             return {
                 ...state,

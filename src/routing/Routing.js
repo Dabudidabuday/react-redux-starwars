@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 
 import { paths } from "../constants";
 import { Navbar } from "../components";
-import { Favorites, Peoples, NotFound  } from "../pages";
-import { HeroDetailsContainer } from "../containers";
+import { Peoples, NotFound  } from "../pages";
+import { FavoritesContainer, HeroDetailsContainer } from "../containers";
 
 export const Routing = () => {
     return (
@@ -21,7 +21,7 @@ export const Routing = () => {
                 </Route>
 
                 <Route exact path={paths.favorites}>
-                    <Favorites/>
+                    <FavoritesContainer/>
                 </Route>
 
                 <Route exact path='/'>

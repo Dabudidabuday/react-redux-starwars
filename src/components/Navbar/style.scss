@@ -9,11 +9,12 @@
   a {
     margin-right: 10px;
     padding: 10px 10px;
-    color: white;
+    color: #CECECE;
     font-size: 24px;
     font-weight: 300;
     border-bottom: 1px solid transparent;
     letter-spacing: 4px;
+    text-transform: uppercase;
 
     &:hover {
       border-color: white;

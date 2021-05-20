@@ -13,7 +13,7 @@ export const Peoples = () => {
             className="page peoples-list"
             style={{backgroundImage: `url(${background})`}}
         >
-            <TemplateWithSidebar>
+            <TemplateWithSidebar additional='jc-center'>
                 <div className="characters">
                     <h2 className="h2 characters__title">Characters</h2>
 

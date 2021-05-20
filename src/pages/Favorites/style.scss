@@ -1,2 +1,45 @@
-.path {
+.favorites {
+  &__title {
+    text-align: center;
+    font-size: 72px;
+  }
+
+  &__list {
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+
+    .btn-primary {
+      width: 350px;
+    }
+
+    .btn-remove {
+      padding-left: 3px;
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      width: 30px;
+      height: 30px;
+      font-family: "Roboto", sans-serif;
+      color: $colorPrimary;
+      font-size: 26px;
+      text-align: center;
+      background-color: $colorAccent;
+      transform: translateY(-50%);
+      border-radius: 2px;
+
+      &:hover {
+        color: white;
+        background-color: #6f5b03;
+        transition: $transition;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 30px;
+    position: relative;
+  }
 }
+
