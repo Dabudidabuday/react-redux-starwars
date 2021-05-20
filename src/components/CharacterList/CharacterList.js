@@ -1,17 +1,9 @@
 import './style.scss';
-import React, { useEffect } from "react";
+import React from "react";
 import { CharacterItem } from "./CharacterItem";
-import { useDispatch, useSelector } from "react-redux";
-import { peopleActions } from "../../store/people";
 import { Loader } from "../Loader";
 
-export const CharacterList = ({ }) => {
-    const { people, loading, searchValue } = useSelector(state => state.people);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(peopleActions.getPeople());
-    }, [])
+export const CharacterList = ({ people, loading, searchValue }) => {
 
     return (
         <div className="list">

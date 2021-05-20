@@ -12,7 +12,6 @@ export const HeroDetailsContainer = () => {
     const heroName = slugToName(slug);
 
     useEffect(() => {
-
         dispatch(detailsActions.getHero(heroName));
     }, [] );
     

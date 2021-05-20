@@ -7,6 +7,7 @@ const initialState = {
     heroFromSlug: '',
     filteredHeroes: [],
     searchValue: '',
+    currentPage: null
 }
 
 export const peopleReducers = (state=initialState, action) => {
@@ -43,6 +44,12 @@ export const peopleReducers = (state=initialState, action) => {
             return {
                 ...state,
                 searchValue: action.payload
+            }
+
+        case peopleActionTypes.SET_CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage: action.payload
             }
 
         default:

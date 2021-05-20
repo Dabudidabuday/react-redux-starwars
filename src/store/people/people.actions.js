@@ -10,6 +10,7 @@ export const peopleActionTypes = {
     SET_CHOSEN_HERO: 'PEOPLE.SET_CHOSEN_HERO',
     GET_HERO_SLUG: 'PEOPLE.GET_HERO_SLUG',
     SET_SEARCH_VALUE: 'PEOPLE.SET_SEARCH_VALUE',
+    SET_CURRENT_PAGE: 'PEOPLE.SET_CURRENT_PAGE'
 }
 
 export const peopleActions = {
@@ -19,6 +20,7 @@ export const peopleActions = {
         try {
             const response = await getPeople(params);
 
+            dispatch(peopleActions.setCurrentPage(response));
             dispatch(peopleActions.setPeople(response.results));
         } catch(e) {
             console.log(e.message);
@@ -29,5 +31,6 @@ export const peopleActions = {
     setPeople: (people) => ({type: peopleActionTypes.SET_PEOPLE, payload: people}),
     filterPeople: (name) => ({type: peopleActionTypes.FILTER_PEOPLE, payload: name}),
     setLoader: (loading) => ({type: peopleActionTypes.SET_LOADER, payload: loading}),
-    setSearchValue: (name) => ({type: peopleActionTypes.SET_SEARCH_VALUE, payload: name})
+    setSearchValue: (name) => ({type: peopleActionTypes.SET_SEARCH_VALUE, payload: name}),
+    setCurrentPage: (payload) => ({type: peopleActionTypes.SET_CURRENT_PAGE, payload})
 }
