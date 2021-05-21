@@ -11,15 +11,13 @@ export const Peoples = () => {
     const [ prevNextUrl, setPrevNextUrl ] = useState('')
     const { people, loading, searchValue, currentPage } = useSelector(state => state.people);
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(peopleActions.getPeople(prevNextUrl));
     }, [prevNextUrl])
 
     const goPrev = () => {
-        const prevUrl = currentPage.previous;
+        const prevUrl = currentPage.previous || '';
         const params = prevUrl.substring(prevUrl.lastIndexOf('/') + 1);
-
         setPrevNextUrl(params);
     }
 
@@ -45,6 +43,7 @@ export const Peoples = () => {
                     />
 
                     <Pagination
+                        currentPage={currentPage}
                         goPrev={goPrev}
                         goNext={goNext}
                     />

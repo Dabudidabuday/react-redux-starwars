@@ -15,6 +15,18 @@
     &:hover {
       color: $colorAccent;
       border-color: $colorAccent;
+
+      .arrow {
+        border-color: $colorAccent;
+      }
+    }
+
+    &.disabled {
+      color: #676666;
+
+      .arrow {
+        border-color: #676666;
+      }
     }
   }
 }
